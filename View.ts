@@ -26,6 +26,8 @@ export class View {
         this.canvas = args.canvas;
         this.theme = args.theme === undefined ? defaultTheme : args.theme;
         this.mapView = this.initialize();
+
+
     }
 
     protected initialize(): MapView {
@@ -36,11 +38,15 @@ export class View {
         });
 
         const dataSource = new VectorTileDataSource({
-            authenticationCode: process.env.HERE_API_KEY
+            authenticationCode: process.env.HERE_API_KEY,
         });
         mapView.addDataSource(dataSource);
 
         MapControls.create(mapView);
+
+        mapView.setTheme("resources/berlin_tilezen_effects_outlines.json").then(() => {
+            mapView.loadPostEffects("resources/effects_outlines.json");
+        })
 
         return mapView;
     }

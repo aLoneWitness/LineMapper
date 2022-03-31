@@ -5,7 +5,6 @@
  */
 
 import { GeoCoordinates } from "@here/harp-geoutils";
-import 'dotenv/config'
 import { View } from "./View";
 
 const app = new View({
