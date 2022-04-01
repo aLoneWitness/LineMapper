@@ -27,7 +27,7 @@ export class View {
 
     readonly mapView: MapView;
 
-    readonly scale = 400;
+    readonly scale = 100;
     readonly geometry = new THREE.BoxGeometry(1 * this.scale, 1 * this.scale, 1 * this.scale);
     readonly prePassMaterial = new THREE.MeshStandardMaterial({
         color: "#ff00fe",
